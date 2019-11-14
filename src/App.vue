@@ -79,14 +79,13 @@ export default {
     },
     deleteCompleted() {
       this.tasks = this.tasks.filter(t => !t.done);
-      this.storeData;
-    },
-
-    created() {
-      let data = localStorage.getItem("todos");
-      if (data != null) {
-        this.tasks = JSON.parse(data);
-      }
+      this.storeData();
+    }
+  },
+  created() {
+    let data = localStorage.getItem("todos");
+    if (data != null) {
+      this.tasks = JSON.parse(data);
     }
   }
 };
